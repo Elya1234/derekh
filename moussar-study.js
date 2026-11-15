@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let texts = [];
 
     try {
-        const res = await fetch('data/moussar-texts.json');
+        const res = await fetch('moussar-texts.json');
         texts = await res.json();
     } catch (e) {
         console.error("Erreur de chargement des textes de Moussar", e);
