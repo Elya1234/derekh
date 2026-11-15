@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     let books = [];
 
     try {
-        const cRes = await fetch('data/courses.json');
+        const cRes = await fetch('courses.json');
         courses = await cRes.json();
     } catch (e) { console.error(e); }
 
     try {
-        const bRes = await fetch('data/books.json');
+        const bRes = await fetch('books.json');
         books = await bRes.json();
     } catch (e) { console.error(e); }
 
