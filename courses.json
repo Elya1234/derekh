@@ -1,0 +1,35 @@
+[
+  {
+    "id": "c1",
+    "title": "Introduction au Houmach : Bereshit",
+    "category": "Torah Academy",
+    "author": "Rachi (Rabbi Chlomo Yitsḥaqi)",
+    "work": "Commentaire sur la Torah",
+    "chapter": "Chapitre 1, Verset 1",
+    "reference": "Genèse 1:1, avec Rachi",
+    "explanation": "Pourquoi la Torah commence-t-elle par la création du monde ? Rachi cite Rabbi Yitsḥaq : 'Il aurait dû commencer la Torah par Le mois ci est pour vous (Exode 12:2), qui est la première mitsva commandée à Israël... S'il en est ainsi, pourquoi a-t-il commencé par Bereshit ? En raison de la puissance de ses actes il a déclaré à son peuple la force de ses œuvres, pour leur donner l'héritage des nations.'",
+    "application": "Reconnaître que chaque nation a sa terre, et que la légitimité d'Israël repose sur le Créateur de l'univers."
+  },
+  {
+    "id": "c2",
+    "title": "L'éthique des Pères : Pirkei Avot",
+    "category": "Moussar",
+    "author": "Hillel l'Ancien",
+    "work": "Traité Avot",
+    "chapter": "Chapitre 1, Mishna 14",
+    "reference": "Pirkei Avot 1:14",
+    "explanation": "Hillel disait : 'Si je ne suis pas pour moi, qui le sera ? Et si je ne suis que pour moi, que suis-je ? Et si ce n'est maintenant, quand ?'",
+    "application": "Prendre sa responsabilité personnelle en main sans attendre, tout en agissant pour le bien de la collectivité."
+  },
+  {
+    "id": "c3",
+    "title": "Les lois fondamentales de Chabbat",
+    "category": "Halakha",
+    "author": "Rabbi Yossef Karo / Michna Beroura",
+    "work": "Choulhan Aroukh, Ora'h Haïm",
+    "chapter": "Siman 242",
+    "reference": "Choulhan Aroukh O.H. 242",
+    "explanation": "L'obligation de se préparer avant l'entrée de Chabbat avec sérénité et dans la joie, en vérifiant que toutes les lumières et cuissons nécessaires sont réglées.",
+    "application": "Éviter la précipitation de dernière minute en anticipant les préparatifs dès le vendredi matin."
+  }
+]
