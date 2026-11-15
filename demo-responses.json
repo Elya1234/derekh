@@ -1,0 +1,29 @@
+{
+  "queries": {
+    "Comment commencer à étudier la Torah ?": {
+      "response": "Pour commencer à étudier la Torah, il est conseillé de s'appuyer sur un texte structuré accompagné d'un commentaire classique accessible, tel que le Pentateuque (Houmach) avec le commentaire de Rachi, ou les chapitres éthiques de Pirkei Avot (L'Éthique des Pères). La régularité prime sur la quantité : mieux vaut 15 minutes par jour de façon constante que de longues heures épisodiques.",
+      "source": "Guide d'étude DEREKH - Validé par les principes traditionnels d'accessibilité.",
+      "category": "Torah Academy"
+    },
+    "Comment arrêter de passer trop de temps sur mon téléphone ?": {
+      "response": "La réduction de la dépendance au téléphone ne passe pas par la culpabilisation, mais par la mise en place de barrières environnementales claires : désactiver toutes les notifications non essentielles, instaurer une zone sans téléphone (notamment la chambre et la table de repas), et planifier des temps d'étude et de présence réelle où l'appareil est placé dans une autre pièce.",
+      "source": "Module Anti-Addiction & Maîtrise de soi DEREKH.",
+      "category": "Maîtrise de soi"
+    },
+    "Que dit le Messilat Yesharim sur la maîtrise de soi ?": {
+      "response": "Le Ramhal (Rabbi Moché Haïm Luzzatto) enseigne dans le Messilat Yesharim que le fondement de la perfection spirituelle réside dans la vigilance (Zéhirout) et l'empressement (Zrizout). L'homme doit examiner constamment ses actions pour ne pas se laisser submerger par l'automaticité et les entraînements de la routine.",
+      "source": "Messilat Yesharim, Chapitre 1 & 6 — Ramhal.",
+      "category": "Moussar"
+    },
+    "Comment mieux organiser ma journée ?": {
+      "response": "Une journée équilibrée selon l'esprit de DEREKH repose sur trois piliers : un temps fixe consacré à l'étude spirituelle (Torah/Prière), un temps de travail productif et concentré (Deep Work), et un temps dédié à la famille et au repos physique sans écran. Planifier la veille au soir permet de libérer l'esprit de la charge mentale.",
+      "source": "Synthèse des principes de productivité et d'éthique juive.",
+      "category": "Business Academy"
+    },
+    "Comment construire une entreprise selon les principes éthiques de la Torah ?": {
+      "response": "L'éthique des affaires dans la Torah repose sur l'intégrité absolue dans les balances et les contrats (Onahat Devarim et Onahat Mamon), l'honnêteté rigoureuse, et la conscience que le travail est un partenariat avec le Créateur. Le succès économique s'accompagne d'une responsabilité sociale et philanthropique (Tsedaka).",
+      "source": "Choulhan Aroukh, Chomer Emounim / Traité Baba Metsia.",
+      "category": "Business Academy"
+    }
+  }
+}
