@@ -1,0 +1,26 @@
+[
+  {
+    "id": "b1",
+    "title": "Messilat Yesharim (Le Sentier des Justes)",
+    "author": "Rabbi Moché Haïm Luzzatto (Ramhal)",
+    "category": "Moussar",
+    "summary": "Un traité monumental de progression spirituelle, menant l'homme de l'attention (Zrizout) jusqu'à la sainteté (Hassidout).",
+    "application": "Avancer pas à pas dans l'amélioration de ses traits de caractère par l'analyse méthodique et la discipline."
+  },
+  {
+    "id": "b2",
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "category": "Business Academy",
+    "summary": "Méthode scientifique pour accumuler de 1% d'amélioration chaque jour grâce aux boucles d'habitudes.",
+    "application": "Appliquer la constance dans l'étude quotidienne de la Torah plutôt que des efforts sporadiques."
+  },
+  {
+    "id": "b3",
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "category": "Business Academy",
+    "summary": "L'art de cultiver une concentration sans distraction dans un monde saturé de sollicitations numériques.",
+    "application": "Bloquer des plages horaires d'étude de la Torah et de travail sans téléphone portable."
+  }
+]
