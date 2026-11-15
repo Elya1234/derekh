@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let demoData = null;
 
     try {
-        const response = await fetch('data/demo-responses.json');
+        const response = await fetch('demo-responses.json');
         demoData = await response.json();
     } catch (e) {
         console.error("Impossible de charger demo-responses.json", e);
