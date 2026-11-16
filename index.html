@@ -1,67 +1,148 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr" data-theme="dark">
+<html lang="fr" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEREKH — דֶּרֶךְ | Plateforme internationale IA & Torah</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>DEREKH (דֶּרֶךְ) — Plateforme Documentaire Juive Intelligente</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-    <div class="app-container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <div class="logo-box">
-                    <img src="logo.svg" alt="Logo DEREKH" class="logo-svg">
-                    <span class="logo-title">DEREKH</span>
-                </div>
-                <button class="mobile-close" id="mobileClose">&times;</button>
+    <div id="app-container">
+        <!-- Barre de navigation latérale / supérieure -->
+        <header id="main-header">
+            <div class="logo-area">
+                <svg class="logo-svg" viewBox="0 0 24 24" width="32" height="32"><path fill="currentColor" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span class="brand-title">DEREKH <heb>דֶּרֶךְ</heb></span>
             </div>
-            
-            <nav class="sidebar-nav">
-                <a href="#home" class="nav-link active" data-view="home">🏠 Accueil</a>
-                <a href="#assistant" class="nav-link" data-view="assistant">✨ Assistant IA</a>
-                <a href="#library" class="nav-link" data-view="library">📚 Bibliothèque</a>
-                <a href="#reader" class="nav-link" data-view="reader">📖 Lecteur de Textes</a>
-                <a href="#rabbanim" class="nav-link" data-view="rabbanim">🎓 Rabbanim & Enseignements</a>
-                <a href="#dashboard" class="nav-link" data-view="dashboard">📊 Mon Parcours</a>
-                <a href="#habits" class="nav-link" data-view="habits">🌿 Maîtrise de Soi</a>
+            <nav class="main-nav">
+                <button class="nav-btn active" data-view="dashboard">Tableau de bord</button>
+                <button class="nav-btn" data-view="library">Bibliothèque</button>
+                <button class="nav-btn" data-view="halakha">Halakha</button>
+                <button class="nav-btn" data-view="torah">Torah & Talmud</button>
+                <button class="nav-btn" data-view="rabbanim">Sages & Enseignements</button>
+                <button class="nav-btn" data-view="assistant">Assistant DEREKH</button>
+                <button class="nav-btn" data-view="academy">Académie</button>
             </nav>
-
-            <div class="sidebar-footer">
-                <div class="session-timer">⏱️ Session : <strong id="timer">00:00</strong></div>
-                <p class="motto">« La Torah comme fondation. »</p>
+            <div class="header-actions">
+                <button id="search-trigger-btn" title="Recherche globale (Ctrl+K)">🔍 Recherche</button>
+                <button id="theme-toggle" title="Mode Nuit / Jour">🌓</button>
             </div>
-        </aside>
+        </header>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <header class="top-header">
-                <button class="mobile-toggle" id="mobileToggle">☰</button>
-                <div class="header-title" id="headerTitle">Accueil</div>
-                <div class="header-actions">
-                    <select id="langSelect" class="lang-select">
-                        <option value="fr">Français</option>
-                        <option value="he">עברית</option>
-                        <option value="en">English</option>
-                    </select>
+        <!-- Contenu dynamique principal -->
+        <main id="main-content">
+            <!-- Vue par défaut : Dashboard -->
+            <section id="view-dashboard" class="view-section active">
+                <div class="hero-banner">
+                    <h1>La Voie de la Sagesse et de l'Autonomie</h1>
+                    <p>Étudiez, progressez et intégrez la Torah dans votre vie quotidienne avec des sources authentiques.</p>
                 </div>
-            </header>
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3>📖 Reprise de lecture</h3>
+                        <div id="last-read-container">Aucune lecture récente.</div>
+                    </div>
+                    <div class="card">
+                        <h3>⚡ Étude du jour</h3>
+                        <p><strong>Pirkei Avot 1:1</strong><br><em>Moshe a reçu la Torah du Sinaï...</em></p>
+                        <button class="btn-primary" onclick="App.openReader('Pirkei_Avot.1.1')">Étudier</button>
+                    </div>
+                    <div class="card">
+                        <h3>📊 Statistiques d'étude</h3>
+                        <p>Temps consacré aujourd'hui : <span id="study-time">0 min</span></p>
+                        <p>Simanim validés : <span id="simanim-count">0</span></p>
+                    </div>
+                </div>
+            </section>
 
-            <div class="content-body" id="viewContainer">
-                <!-- Vues injectées dynamiquement -->
-            </div>
+            <!-- Vue Bibliothèque & Halakha & Torah -->
+            <section id="view-library" class="view-section">
+                <div class="library-header">
+                    <h2>Bibliothèque Documentaire Centralisée</h2>
+                    <div class="filter-bar">
+                        <select id="lib-source-select">
+                            <option value="sefaria">Source principale : Sefaria API</option>
+                            <option value="archive">Internet Archive (Métadonnées)</option>
+                        </select>
+                        <input type="text" id="lib-search-input" placeholder="Filtrer les ouvrages...">
+                    </div>
+                </div>
+                <div id="catalog-grid" class="catalog-grid">
+                    <!-- Rempli dynamiquement par library.js -->
+                </div>
+            </section>
+
+            <!-- Vue Halakha spécifique (Choulhan Aroukh) -->
+            <section id="view-halakha" class="view-section">
+                <h2>Bibliothèque de Halakha & Choulhan Aroukh</h2>
+                <div class="halakha-navigator">
+                    <div class="helix-sidebar">
+                        <h3>Parties du Choulhan Aroukh</h3>
+                        <ul class="halakha-parts-list">
+                            <li onclick="HalakhaViewer.loadPart('Orach_Chaim')">Ora'h 'Haïm (אורח חיים)</li>
+                            <li onclick="HalakhaViewer.loadPart('Yoreh_Deah')">Yoré Déa (יורה דעה)</li>
+                            <li onclick="HalakhaViewer.loadPart('Even_HaEzer')">Even HaEzer (אבן העזר)</li>
+                            <li onclick="HalakhaViewer.loadPart('Choshen_Mishpat')">Hochen Michpat (חושן משפט)</li>
+                        </ul>
+                    </div>
+                    <div class="helix-content" id="halakha-content-area">
+                        <p>Sélectionnez une partie pour explorer les Simanim et Seïfim via l'API Sefaria.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vue Sages -->
+            <section id="view-rabbanim" class="view-section">
+                <h2>Les Sages et leurs Enseignements</h2>
+                <div id="rabbanim-grid" class="rabbanim-grid"></div>
+            </section>
+
+            <!-- Vue Assistant -->
+            <section id="view-assistant" class="view-section">
+                <h2>Assistant Documentaire DEREKH</h2>
+                <div class="assistant-box">
+                    <div id="chat-history" class="chat-history">
+                        <div class="chat-message system">Shalom. Posez une question sur un texte, une loi (ex: Choulhan Aroukh Orach Chaim 1) ou un sujet halakhique. L'assistant s'appuie sur les sources documentaires vérifiées.</div>
+                    </div>
+                    <div class="chat-input-bar">
+                        <input type="text" id="chat-input" placeholder="Ex : Que dit le Choulhan Aroukh sur la préparation de Shabbat ?">
+                        <button id="chat-send-btn" onclick="Assistant.send()">Interroger</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vue Académie & Autres -->
+            <section id="view-academy" class="view-section">
+                <h2>Académie d'Études et Maîtrise de Soi</h2>
+                <p>Programmes structurés pour l'autonomie intellectuelle, spirituelle et professionnelle.</p>
+            </section>
         </main>
+
+        <!-- Lecteur Universel Modal / Panneau -->
+        <div id="universal-reader-modal" class="reader-modal hidden">
+            <div class="reader-header">
+                <span id="reader-title-display">Titre de l'ouvrage</span>
+                <div class="reader-controls-bar">
+                    <button onclick="Reader.toggleBilingual()">Mode Bilingue</button>
+                    <button onclick="Reader.adjustFont(1)">A+</button>
+                    <button onclick="Reader.adjustFont(-1)">A-</button>
+                    <button onclick="Reader.close()">✕ Fermer</button>
+                </div>
+            </div>
+            <div class="reader-body" id="reader-text-container">
+                <!-- Texte chargé dynamiquement -->
+            </div>
+        </div>
     </div>
 
-    <!-- Scripts à plat -->
+    <!-- Scripts modulaires -->
     <script src="data.js"></script>
-    <script src="search.js"></script>
-    <script src="assistant.js"></script>
     <script src="library.js"></script>
     <script src="reader.js"></script>
+    <script src="halakha.js"></script>
     <script src="rabbanim.js"></script>
+    <script src="assistant.js"></script>
     <script src="dashboard.js"></script>
     <script src="app.js"></script>
 </body>
