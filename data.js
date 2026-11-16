@@ -1,14 +1,14 @@
-const AppData = {
-    books: [
-        { id: "b1", title: "Messilat Yesharim", author: "Rabbi Moché Haïm Luzzatto", category: "Moussar", desc: "Traité de progression spirituelle." },
-        { id: "b2", title: "Pirkei Avot", author: "Sages de la Michna", category: "Torah Orale", desc: "Maximes et éthique des Pères." }
+const DerekhData = {
+    catalog: [
+        { id: "Bereshit", title: "Beréchit (Genèse)", category: "Torah", sefariaRef: "Genesis", author: "Moshe Rabbeinu" },
+        { id: "Mishnah_Berakhot", title: "Mishnah Berakhot", category: "Mishnah", sefariaRef: "Mishnah_Berakhot", author: "Rabbi Yehuda HaNasi" },
+        { id: "Pirkei_Avot", title: "Pirkei Avot (Éthique des Pères)", category: "Mussar", sefariaRef: "Pirkei_Avot", author: "Sages de la Mishnah" },
+        { id: "Shulchan_Arukh_Orach_Chaim", title: "Choulhan Aroukh - Ora'h 'Haïm", category: "Halakha", sefariaRef: "Shulchan_Arukh,_Orach_Chaim", author: "Rav Yossef Karo" }
     ],
     rabbanim: [
-        { id: "r1", name: "Rabbi Jérémie Berrebi", role: "Fondateur Keter Chelomo", desc: "Spécialiste de l'étude et de l'éthique professionnelle." },
-        { id: "r2", name: "Rabbi Méïr Mazouz זצ״ל", role: "Rosh Yeshiva Kissé Ra'hamim", desc: "Grand décisionnaire et maître de la tradition." }
-    ],
-    demoQA: {
-        "Comment commencer l'étude de la Torah ?": "Il est conseillé de débuter avec le Pentateuque (Houmach) accompagné du commentaire de Rachi, à raison de 15 minutes par jour.",
-        "Comment réduire mon temps d'écran ?": "Mettez en place des barrières physiques : éloignez le téléphone pendant les repas et l'étude, et désactivez les notifications non essentielles."
-    }
+        { name: "Rav Ovadia Yosef זצ״ל", role: "Posek Hador, Rishon LeZion", bio: "Maître incontesté de la Halakha séfarade contemporaine, auteur du Yabi'a Omer." },
+        { name: "Rav Meir Mazuz זצ״ל / שליט״א", role: "Rosh Yeshivat Kisse Rachamim", bio: "Grand décisionnaire et érudit tunisien, gardien de la tradition exacte." },
+        { name: "Rav Shalom Arush", role: "Professeur de Emouna et Moussar", bio: "Auteur du Jardin du Bh'ir et diffuseur mondial de la Emouna." },
+        { name: "Rav Moshe Feinstein זצ״ל", role: "Posek de l'Amérique du Nord", bio: "Auteur du Igrot Moshe, autorité suprême en Halakha au XXe siècle." }
+    ]
 };
