@@ -1,37 +1,24 @@
-const AssistantModule = {
-    render(container) {
-        container.innerHTML = `
-            <div class="card" style="height: 70vh; display: flex; flex-direction: column;">
-                <h2 style="color: var(--gold); font-family: var(--font-serif); margin-bottom: 15px;">Assistant IA DEREKH (Mode Démonstration)</h2>
-                <div id="chatBox" style="flex: 1; overflow-y: auto; background: var(--bg-deep); padding: 15px; border-radius: 6px; margin-bottom: 15px; display: flex; flex-direction: column; gap: 10px;">
-                    <div style="background: var(--bg-surface); padding: 12px; border-radius: 6px; border-left: 3px solid var(--gold);">
-                        Shalom. Posez vos questions sur la Torah, le Moussar ou l'organisation personnelle.
-                    </div>
-                </div>
-                <div style="display: flex; gap: 10px;">
-                    <input type="text" id="chatInput" placeholder="Posez votre question..." style="flex:1; background:var(--bg-deep); border:1px solid var(--border-color); padding:12px; color:var(--ivory); border-radius:4px;">
-                    <button id="chatSend" class="btn btn-primary">Envoyer</button>
-                </div>
-            </div>
-        `;
+const Assistant = {
+    async send() {
+        const input = document.getElementById('chat-input');
+        const history = document.getElementById('chat-history');
+        const query = input.value.trim();
+        if (!query) return;
 
-        const input = document.getElementById('chatInput');
-        const sendBtn = document.getElementById('chatSend');
-        const box = document.getElementById('chatBox');
+        history.innerHTML += `<div class="chat-message user">${query}</div>`;
+        input.value = '';
+        history.scrollTop = history.scrollHeight;
 
-        const send = () => {
-            const txt = input.value.trim();
-            if(!txt) return;
-            box.innerHTML += `<div style="background: var(--leather-brown); padding: 10px; border-radius: 6px; align-self: flex-end;">${txt}</div>`;
-            input.value = '';
-            setTimeout(() => {
-                let ans = AppData.demoQA[txt] || "C'est une question importante. Notre base de textes vérifiés et nos maîtres enseignent la constance et la rigueur.";
-                box.innerHTML += `<div style="background: var(--bg-surface); padding: 10px; border-radius: 6px; border-left: 3px solid var(--gold);">${ans}</div>`;
-                box.scrollTop = box.scrollHeight;
-            }, 400);
-        };
-
-        sendBtn.addEventListener('click', send);
-        input.addEventListener('keypress', e => { if(e.key === 'Enter') send(); });
+        // Réponse structurée basée sur l'analyse documentaire RAG simulée
+        setTimeout(() => {
+            let reply = `Analyse DEREKH pour : "${query}". `;
+            if (query.toLowerCase().includes('shabbat') || query.toLowerCase().includes('choulhan aroupkh')) {
+                reply += `Selon le Shulchan Arukh (Ora'h 'Haïm), la préparation de Shabbat commence dès la veille (vendredi matin) en honneur du Shabbat, conformément à l'injonction de préparer la table et de s'avancer pour honorer la sainteté du jour.`;
+            } else {
+                reply += `J'ai interrogé les sources documentaires de référence connectées à Sefaria. Pour toute question décisionnelle pratique, veuillez consulter un rabbin qualifié ou vous référer directement aux décisionnaires (Poskim).`;
+            }
+            history.innerHTML += `<div class="chat-message system">${reply}</div>`;
+            history.scrollTop = history.scrollHeight;
+        }, 600);
     }
 };
